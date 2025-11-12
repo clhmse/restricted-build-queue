@@ -1,0 +1,69 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Plugin Identity -->
+    <groupId>io.clhmse.jenkins</groupId>
+    <artifactId>restricted-build-queue</artifactId>
+    <version>0.0.1</version>
+    <packaging>hpi</packaging>
+
+    <name>Restricted Build Queue</name>
+    <description>Replaces Jenkins' Build Queue widget with an admin-only version to reduce load.</description>
+    <url>https://github.com/clhmse/restricted-build-queue</url>
+
+    <!-- Jenkins Plugin Parent (controls build setup, dependencies, etc.) -->
+    <parent>
+        <groupId>org.jenkins-ci.plugins</groupId>
+        <artifactId>plugin</artifactId>
+        <version>5.28</version> <!-- Works with Jenkins 2.426+ -->
+    </parent>
+
+    <!-- Minimum Jenkins Core Version -->
+    <properties>
+        <jenkins.version>2.528.1</jenkins.version>
+        <java.level>21</java.level>
+        <hpi.compatibleSinceVersion>2.528.1</hpi.compatibleSinceVersion>
+    </properties>
+
+    <!-- Dependencies -->
+    <dependencies>
+        <!-- Jenkins core APIs -->
+        <dependency>
+            <groupId>org.jenkins-ci.main</groupId>
+            <artifactId>jenkins-core</artifactId>
+            <version>${jenkins.version}</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <!-- Jenkins Plugin Metadata -->
+    <scm>
+        <connection>scm:git:https://github.com/clhmse/restricted-build-queue</connection>
+        <developerConnection>scm:git:git@github.com/clhmse/restricted-build-queue</developerConnection>
+        <url>https://github.com/clhmse/restricted-build-queue</url>
+    </scm>
+
+    <developers>
+        <developer>
+            <id>clhmse</id>
+            <name>Cooper Lulham</name>
+        </developer>
+    </developers>
+
+    <repositories>
+        <repository>
+            <id>repo.jenkins-ci.org</id>
+            <url>https://repo.jenkins-ci.org/public/</url>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>repo.jenkins-ci.org</id>
+            <url>https://repo.jenkins-ci.org/public/</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+</project>

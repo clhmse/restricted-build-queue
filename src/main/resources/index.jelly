@@ -1,0 +1,4 @@
+<?jelly escape-by-default='true'?>
+<div>
+    Restricted Build Queue Plugin - only shows the build queue to site admins.
+</div>
